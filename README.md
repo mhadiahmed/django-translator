@@ -1,2 +1,4 @@
-#Django Translator
+# Django Translator
+
+ translator using Django and Ajax 
 
