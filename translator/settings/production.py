@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's1=0xru)dcr&0@&bqb*3)#c=)mu3e5i1t%wl%-ydbhcuj55-79'
+SECRET_KEY = os.environ.get('SECRET_KEY','s1=0xru)dcr&0@&bqb*3)#c=)mu3e5i1t%wl%-ydbhcuj55-79')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dj-translator.herokuapp.com']
 
 
 # Application definition
@@ -82,7 +82,10 @@ DATABASES = {
     }
 }
 
-
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+# DATABASES['default']['CONN_MAX_AGE'] = 500
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
