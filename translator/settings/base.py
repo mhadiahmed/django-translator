@@ -25,7 +25,7 @@ SECRET_KEY = 's1=0xru)dcr&0@&bqb*3)#c=)mu3e5i1t%wl%-ydbhcuj55-79'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dj-translator.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
